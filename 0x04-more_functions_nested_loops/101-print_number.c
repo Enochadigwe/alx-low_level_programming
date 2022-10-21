@@ -1,33 +1,35 @@
-#include <stdio.h>
-
+#include "main.h"
+void print_integer(int m);
 /**
- * main-entry point
- *
- * Description: prints all possible combinations of two two-digit numbers
- *
- * Return:0 success, non zero fail
- */
-
-int main(void)
+ * * print_number - a function that prints an integer.
+ * * @n: An input integer
+ * * Return: Nothing
+*/
+void print_number(int n)
 {
-int i, j;
+	if (n == 0)
+		_putchar('0');
 
-for (i = 0; i < 99; i++)
+	else if (n < 0)
+	{
+		_putchar('-');
+		print_integer(n * -1);
+	}
+	else
+		print_integer(n);
+}
+/**
+ * * print_integer - A function to priting n
+ * * @m: an input unsigned integer
+ * * Return: Nothing
+*/
+void print_integer(int m)
 {
-putchar('0' + i / 10);
-putchar('0' + i / 10);
+	int i = 1000000000;
 
-putchar(' ')
-
-putchar('0' + j / 10);
-putchar('0' + j / 10);
-
-if (i == 98 && j == 99)
-break;
-putchar(',');
-putchar(' ');
-}
-}
-putchar('\n');
-return (0);
+	for (; i >= 1; i /= 10)
+		if (m / i != 0)
+		{
+			_putchar((m / i) % 10 + '0');
+		}
 }
