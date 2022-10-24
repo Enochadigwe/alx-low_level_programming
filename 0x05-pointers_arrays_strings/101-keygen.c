@@ -5,6 +5,7 @@
  * main - generates keygen.
  * Return: 0 Always.
 */
+
 int main(void)
 {
 int r = 0, c = 0;
